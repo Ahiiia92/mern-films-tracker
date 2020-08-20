@@ -9,10 +9,24 @@
 
 <body>
   <h1>Film</h1>
+  <div>
+    <a href="/">To List</a>
+  </div>
   <main>
     <h1><%= film.name %></h1>
     <img src="<%= film.image %>" alt="<%= film.name %>" />
     <p><%= film.description %></p>
+    <div>
+      <form method="POST" action="/delete">
+        <div>
+          <input type="hidden" value="<%= film.id %>" name="filmID">
+          <button>Delete</button>
+        </div>
+      </form>
+    </div>
+    <div>
+      <a href="/edit-film/<%= film.id %>?edit=true">Edit</a>
+    </div>
   </main>
 </body>
 
