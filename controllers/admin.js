@@ -5,7 +5,11 @@ exports.getIndex = async (req, res) => {
 
   try {
     console.log(film);
-    res.status(200).render('index', { film: film });
+    // Data rendered as an object and passed down into index.ejs
+    // res.status(200).render('index', { film: film });
+
+    // Data returned as json so a fetch/axios requst can get it
+    res.json(film);
   } catch (error) {
     console.log(error);
   }
@@ -56,7 +60,9 @@ exports.postFilm = (req, res) => {
   const film = new Film({ name: name, image: image, description: description });
   film.save();
   console.log('Film Added to the database');
-  res.status(201).redirect('/');
+
+  // Updated the home route to the React App index page
+  res.status(201).redirect('http://localhost:3000/');
 };
 
 exports.postEditFilm = (req, res) => {
