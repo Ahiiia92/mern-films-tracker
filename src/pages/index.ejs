@@ -10,5 +10,13 @@
 <body>
   <h1>Home Page</h1>
 </body>
-
+<main>
+  <% film.forEach(data => { %>
+    <ul>
+      <li><h1><a href="/<%= data.id %>"><%= data.name %></a></h1></li>
+      <li><img src="<%= data.image %>" alt="<%= data.name %>"></li>
+      <li><p><%= data.description %></p></li>
+    </ul>
+  <% }) %>
+</main>
 </html>
