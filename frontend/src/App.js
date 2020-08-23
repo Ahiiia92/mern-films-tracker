@@ -23,29 +23,31 @@ const App = () => {
   return (
     <Fragment>
       <header>
-        <h1>My Film List: React Front End</h1>
-        <a href="http://localhost:8080">View All Film</a>
-        <a href="http://localhost:8080/add-film">Add New Film</a>
+          <h1>My Film List: React Front End</h1>
+        <div className="header">
+          <a href="http://localhost:8080">View All Film</a>
+          <a href="http://localhost:8080/add-film">Add New Film</a>
+        </div>
       </header>
 
-      <div>
+      <div className="">
         {loading ? (
           <div>Loading</div>
         ) : (
-            <div>
+            <div className="film-cards">
               {film.map((data) => (
-                <div key={data._id}>
+                <div className="film-card" key={data._id}>
                   <ul>
                     <li>
-                      <h1>
+                      <h1 className="film-title">
                         <a href="/{data.id}">{data.name}</a>
                       </h1>
                     </li>
                     <li>
-                      <img src={data.image} alt={data.name} />
+                      <img className="film-img" src={data.image} alt={data.name} />
                     </li>
                     <li>
-                      <p>{data.description}</p>
+                      <p className="film-description" >{data.description}</p>
                     </li>
                   </ul>
                 </div>
@@ -54,7 +56,7 @@ const App = () => {
           )}
       </div>
       <div>
-        <h1>Add New Film</h1>
+        <h1 className="title" >Add New Film</h1>
         <form method="POST" action="http://localhost:8080/add-film">
           <div>
             <label>Name</label>

@@ -89,7 +89,7 @@ exports.postEditFilm = (req, res) => {
 exports.postDelete = async (req, res) => {
   const filmId = req.body.filmId;
 
-  const film = await Film.findByIdAndDelete(filmId, (data) => data);
+  const film = await Film.findByIdAndRemove(filmId, (data) => data);
 
   try {
     console.log(film);

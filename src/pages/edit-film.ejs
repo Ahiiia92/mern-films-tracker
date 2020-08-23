@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<h1><% if(editing){ %>Edit Film<% } else { %>Add Film<% } %></h1>
+<h1 className="film-title"><% if(editing){ %>Edit Film<% } else { %>Add Film<% } %></h1>
 
   <form method="POST" action="/<% if(editing){ %>edit-film<% } else { %>add-film<% } %>">
     <div>
