@@ -18,7 +18,7 @@ ul {
 }
 
 img {
-  width: 200px;
+  max-height: 10rem;
 }
 
 header h1 {
@@ -59,8 +59,9 @@ h3 {
 }
 
 .film-card {
-  background: rgb(89 89 89 / 0.3);
+  background: rgb(89 89 89 / 0.2);
   border-radius: 15px;
+  box-shadow: 2px 2px 2px 1px rgb(49 8 31 / 27%);
 }
 
 .film-title a {
