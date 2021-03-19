@@ -1,4 +1,4 @@
-const Film = require('../models/Film');
+const Film = require('../../models/Film');
 
 exports.getIndex = async (req, res) => {
   const film = await Film.find((data) => data);
